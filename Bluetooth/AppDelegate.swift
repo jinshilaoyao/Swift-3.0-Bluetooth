@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +16,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+
+
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            center.delegate = self
+            
+            center.requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { (granted, error) in
+                
+                if granted {
+                    print("注册成功")
+                } else {
+                    print("注册失败")
+                }
+            })
+            
+            center.getNotificationSettings(completionHandler: { (settings) in
+                
+                switch settings.authorizationStatus {
+                case .notDetermined:
+                    print("未选择")
+                    break
+                case .authorized:
+                    print("已授权")
+                    break
+                case .denied:
+                    print("未授权")
+                    break
+                }
+                
+            })
+            
+        } else if #available(iOS 8.0, *) {
+            //            application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert,.sound,.badge], categories: nil))
+        }
+        
+//        UIApplication.shared.registerForRemoteNotifications()
+        
+        
+        
         return true
     }
 
@@ -40,7 +80,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+}
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+     
+        if response.actionIdentifier == Identifiers.cancelAction {
+            let request = response.notification.request
+            print("Removing item with identifier \(request.identifier)")
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [request.identifier])
+        }
+        
+        completionHandler()
 
+        
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // New in iOS 10, we can show notifications when app is in foreground, by calling completion handler with our desired presentation type.
+        completionHandler(.alert)
+    }
+    
+    
+    
 }
 

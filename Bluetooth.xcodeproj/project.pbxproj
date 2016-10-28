@@ -26,6 +26,7 @@
 		EB3961EA1D9CAAE7005A4693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB3961F11D9CAAF9005A4693 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		EB3961F31D9CAB38005A4693 /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
+		EBFA63171DC09E8500A06159 /* Bluetooth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bluetooth.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 		EB3961DD1D9CAAE7005A4693 /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				EBFA63171DC09E8500A06159 /* Bluetooth.entitlements */,
 				EB3961DE1D9CAAE7005A4693 /* AppDelegate.swift */,
 				EB3961E01D9CAAE7005A4693 /* ViewController.swift */,
 				EB3961E21D9CAAE7005A4693 /* Main.storyboard */,
@@ -111,8 +113,16 @@
 				TargetAttributes = {
 					EB3961DA1D9CAAE7005A4693 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = ZWZANXUM79;
+						DevelopmentTeam = 5JTUB897PB;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -275,10 +285,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZWZANXUM79;
+				CODE_SIGN_ENTITLEMENTS = Bluetooth/Bluetooth.entitlements;
+				DEVELOPMENT_TEAM = 5JTUB897PB;
 				INFOPLIST_FILE = Bluetooth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.iOS-swift.20160422.learn.Bluetooth";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iOS-swift.20160422.learn.Bluetoot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -288,10 +299,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZWZANXUM79;
+				CODE_SIGN_ENTITLEMENTS = Bluetooth/Bluetooth.entitlements;
+				DEVELOPMENT_TEAM = 5JTUB897PB;
 				INFOPLIST_FILE = Bluetooth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.iOS-swift.20160422.learn.Bluetooth";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iOS-swift.20160422.learn.Bluetoot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -316,6 +328,7 @@
 				EB3961EF1D9CAAE7005A4693 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

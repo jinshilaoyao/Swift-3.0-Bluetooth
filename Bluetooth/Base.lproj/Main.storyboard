@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -21,17 +21,37 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u49-Po-Whg">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="259" id="ybt-qQ-1Sz"/>
+                                </constraints>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjZ-WK-z8O">
+                                <state key="normal" title="查找设备"/>
+                                <connections>
+                                    <action selector="startRequestDeive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HkR-lP-PSv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="断开链接" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SA6-Oo-PVz">
+                                <color key="backgroundColor" red="0.80784314869999996" green="0.098851873571353222" blue="0.089811376690320993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="SA6-Oo-PVz" firstAttribute="top" secondItem="DjZ-WK-z8O" secondAttribute="bottom" constant="26" id="FJB-zI-JuY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="u49-Po-Whg" secondAttribute="trailing" id="OL7-pX-C8d"/>
+                            <constraint firstItem="SA6-Oo-PVz" firstAttribute="centerX" secondItem="DjZ-WK-z8O" secondAttribute="centerX" id="hAQ-x0-KRZ"/>
                             <constraint firstItem="u49-Po-Whg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lxK-fr-mCd"/>
+                            <constraint firstItem="DjZ-WK-z8O" firstAttribute="leading" secondItem="u49-Po-Whg" secondAttribute="leading" id="slz-iO-BCP"/>
+                            <constraint firstItem="DjZ-WK-z8O" firstAttribute="trailing" secondItem="u49-Po-Whg" secondAttribute="trailing" id="xhT-cp-X5e"/>
+                            <constraint firstItem="DjZ-WK-z8O" firstAttribute="top" secondItem="u49-Po-Whg" secondAttribute="bottom" constant="8" symbolic="YES" id="xhg-Ze-ol5"/>
                             <constraint firstItem="u49-Po-Whg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yfm-DB-0rZ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u49-Po-Whg" secondAttribute="bottom" constant="323" id="z2Z-Jx-ew0"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="label" destination="SA6-Oo-PVz" id="RU7-4V-P5G"/>
                         <outlet property="tableview" destination="u49-Po-Whg" id="SGO-eU-UtF"/>
                     </connections>
                 </viewController>
