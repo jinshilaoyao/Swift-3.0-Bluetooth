@@ -37,12 +37,19 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSQ-Yd-G5T">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="SA6-Oo-PVz" firstAttribute="leading" secondItem="vSQ-Yd-G5T" secondAttribute="trailing" constant="8" id="3Md-Hc-TGy"/>
                             <constraint firstItem="SA6-Oo-PVz" firstAttribute="top" secondItem="DjZ-WK-z8O" secondAttribute="bottom" constant="26" id="FJB-zI-JuY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="u49-Po-Whg" secondAttribute="trailing" id="OL7-pX-C8d"/>
                             <constraint firstItem="SA6-Oo-PVz" firstAttribute="centerX" secondItem="DjZ-WK-z8O" secondAttribute="centerX" id="hAQ-x0-KRZ"/>
+                            <constraint firstItem="vSQ-Yd-G5T" firstAttribute="centerY" secondItem="SA6-Oo-PVz" secondAttribute="centerY" id="hZ9-aa-cZI"/>
                             <constraint firstItem="u49-Po-Whg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lxK-fr-mCd"/>
                             <constraint firstItem="DjZ-WK-z8O" firstAttribute="leading" secondItem="u49-Po-Whg" secondAttribute="leading" id="slz-iO-BCP"/>
                             <constraint firstItem="DjZ-WK-z8O" firstAttribute="trailing" secondItem="u49-Po-Whg" secondAttribute="trailing" id="xhT-cp-X5e"/>
@@ -51,6 +58,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="distanceLabel" destination="vSQ-Yd-G5T" id="Nuy-Ra-kbj"/>
                         <outlet property="label" destination="SA6-Oo-PVz" id="RU7-4V-P5G"/>
                         <outlet property="tableview" destination="u49-Po-Whg" id="SGO-eU-UtF"/>
                     </connections>

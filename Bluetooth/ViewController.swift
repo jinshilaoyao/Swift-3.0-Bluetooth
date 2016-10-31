@@ -18,6 +18,7 @@ class ViewController: UIViewController {
 
     fileprivate var bluetooth = Bluetooth.shareBlueTooth
     
+    @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
@@ -32,8 +33,16 @@ class ViewController: UIViewController {
             self.tableview.reloadData()
         }
         
+        bluetooth.getdistance = { [unowned self] distance in
+            self.updateDistanceLabel(distance: distance)
+        }
+        
     }
 
+    private func updateDistanceLabel(distance: Double) {
+        distanceLabel.text = String(format: "%.2f", distance)
+    }
+    
     @IBAction func startRequestDeive(_ sender: AnyObject) {
         label.isHidden = true
         bluetooth.start()

@@ -22,13 +22,19 @@ class Bluetooth: NSObject {
     
     fileprivate var centralManager: CBCentralManager?
     
+    fileprivate var currentPeripheral: CBPeripheral?
+    
     var peripheralArray = [CBPeripheral]()
     
     var delegate: BluetoothDelegate?
     
+    var timer: Timer?
+    
     var completionCallBack: (() -> Void)?
     
     var failToConnectCallBack: (() -> Void)?
+    
+    var getdistance: ((_ distance: Double) -> Void)?
     
     func start() {
         centralManager = CBCentralManager(delegate: self, queue: nil)
@@ -50,6 +56,20 @@ class Bluetooth: NSObject {
     }
     func getAllCharacteristic(cbCharArray: [CBCharacteristic], forService service: CBService) {
         
+    }
+    
+    fileprivate func startGetDistanceBetweenEquipments() {
+        timer = Timer(timeInterval: 1.5, target: self, selector: #selector(readRSSI), userInfo: nil, repeats: true)
+        RunLoop.current.add(timer!, forMode: .defaultRunLoopMode)
+    }
+    
+    fileprivate func stop() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    @objc private func readRSSI() {
+        currentPeripheral?.readRSSI()
     }
     
 }
@@ -74,9 +94,22 @@ extension Bluetooth: CBPeripheralDelegate {
             getAllCharacteristic(cbCharArray: service.characteristics!, forService: service)
             
         }
-        
     }
     
+    func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
+        
+        if error != nil {
+            print(error)
+        } else {
+            let rssi = abs(RSSI.int32Value)
+            let power = Double((rssi - 59))/2.0
+            let temp = pow(10.0, power)
+            if temp >= 100 {
+                createReminderNotification(for: "设备正在远离！！")
+            }
+            getdistance?(Double(rssi))
+        }
+    }
 }
 
 extension Bluetooth: CBCentralManagerDelegate {
@@ -126,7 +159,12 @@ extension Bluetooth: CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         
         centralManager?.stopScan()
+        
         peripheral.delegate = self
+        currentPeripheral = peripheral
+        
+        startGetDistanceBetweenEquipments()
+        
         if completionCallBack != nil {
             completionCallBack?()
         }
@@ -140,10 +178,13 @@ extension Bluetooth: CBCentralManagerDelegate {
         print("\(peripheral.name) --- \(error)")
         let text = "\(peripheral.name) - 断开链接"
         createReminderNotification(for: text)
+        stop()
         if (failToConnectCallBack != nil) {
             failToConnectCallBack?()
         }
     }
+    
+    
     
     
     /// Creates a notification for the given task, repeated every minute.
