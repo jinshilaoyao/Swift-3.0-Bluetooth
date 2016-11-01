@@ -104,7 +104,7 @@ extension Bluetooth: CBPeripheralDelegate {
             let rssi = abs(RSSI.int32Value)
             let power = Double((rssi - 59))/2.0
             let temp = pow(10.0, power)
-            if temp >= 100 {
+            if temp >= 80 {
                 createReminderNotification(for: "设备正在远离！！")
             }
             getdistance?(Double(rssi))
