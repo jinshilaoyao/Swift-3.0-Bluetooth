@@ -14,7 +14,36 @@
 		EB3961E91D9CAAE7005A4693 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3961E71D9CAAE7005A4693 /* LaunchScreen.storyboard */; };
 		EB3961F21D9CAAF9005A4693 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3961F11D9CAAF9005A4693 /* CoreBluetooth.framework */; };
 		EB3961F41D9CAB38005A4693 /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3961F31D9CAB38005A4693 /* Bluetooth.swift */; };
+		EB836F3A1DD05CC200F3F78D /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB836F391DD05CC200F3F78D /* UserNotifications.framework */; };
+		EB836F3C1DD05CC200F3F78D /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB836F3B1DD05CC200F3F78D /* UserNotificationsUI.framework */; };
+		EB836F3F1DD05CC200F3F78D /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB836F3E1DD05CC200F3F78D /* NotificationViewController.swift */; };
+		EB836F421DD05CC200F3F78D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB836F401DD05CC200F3F78D /* MainInterface.storyboard */; };
+		EB836F461DD05CC200F3F78D /* NotificationViewController.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EB836F381DD05CC200F3F78D /* NotificationViewController.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB836F441DD05CC200F3F78D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB3961D31D9CAAE7005A4693 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB836F371DD05CC200F3F78D;
+			remoteInfo = NotificationViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EB836F4A1DD05CC200F3F78D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EB836F461DD05CC200F3F78D /* NotificationViewController.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EB3961DB1D9CAAE7005A4693 /* Bluetooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bluetooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +55,12 @@
 		EB3961EA1D9CAAE7005A4693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB3961F11D9CAAF9005A4693 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		EB3961F31D9CAB38005A4693 /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
+		EB836F381DD05CC200F3F78D /* NotificationViewController.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationViewController.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB836F391DD05CC200F3F78D /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		EB836F3B1DD05CC200F3F78D /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		EB836F3E1DD05CC200F3F78D /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		EB836F411DD05CC200F3F78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		EB836F431DD05CC200F3F78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBFA63171DC09E8500A06159 /* Bluetooth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bluetooth.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -38,6 +73,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB836F351DD05CC200F3F78D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB836F3C1DD05CC200F3F78D /* UserNotificationsUI.framework in Frameworks */,
+				EB836F3A1DD05CC200F3F78D /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -45,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3961DD1D9CAAE7005A4693 /* Bluetooth */,
+				EB836F3D1DD05CC200F3F78D /* NotificationViewController */,
 				EB3961DC1D9CAAE7005A4693 /* Products */,
 				EB3961F01D9CAAF9005A4693 /* Frameworks */,
 			);
@@ -54,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3961DB1D9CAAE7005A4693 /* Bluetooth.app */,
+				EB836F381DD05CC200F3F78D /* NotificationViewController.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,8 +123,20 @@
 			isa = PBXGroup;
 			children = (
 				EB3961F11D9CAAF9005A4693 /* CoreBluetooth.framework */,
+				EB836F391DD05CC200F3F78D /* UserNotifications.framework */,
+				EB836F3B1DD05CC200F3F78D /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB836F3D1DD05CC200F3F78D /* NotificationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EB836F3E1DD05CC200F3F78D /* NotificationViewController.swift */,
+				EB836F401DD05CC200F3F78D /* MainInterface.storyboard */,
+				EB836F431DD05CC200F3F78D /* Info.plist */,
+			);
+			path = NotificationViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,15 +149,34 @@
 				EB3961D71D9CAAE7005A4693 /* Sources */,
 				EB3961D81D9CAAE7005A4693 /* Frameworks */,
 				EB3961D91D9CAAE7005A4693 /* Resources */,
+				EB836F4A1DD05CC200F3F78D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EB836F451DD05CC200F3F78D /* PBXTargetDependency */,
 			);
 			name = Bluetooth;
 			productName = Bluetooth;
 			productReference = EB3961DB1D9CAAE7005A4693 /* Bluetooth.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EB836F371DD05CC200F3F78D /* NotificationViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB836F491DD05CC200F3F78D /* Build configuration list for PBXNativeTarget "NotificationViewController" */;
+			buildPhases = (
+				EB836F341DD05CC200F3F78D /* Sources */,
+				EB836F351DD05CC200F3F78D /* Frameworks */,
+				EB836F361DD05CC200F3F78D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationViewController;
+			productName = NotificationViewController;
+			productReference = EB836F381DD05CC200F3F78D /* NotificationViewController.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -124,6 +201,11 @@
 							};
 						};
 					};
+					EB836F371DD05CC200F3F78D = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 5JTUB897PB;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = EB3961D61D9CAAE7005A4693 /* Build configuration list for PBXProject "Bluetooth" */;
@@ -140,6 +222,7 @@
 			projectRoot = "";
 			targets = (
 				EB3961DA1D9CAAE7005A4693 /* Bluetooth */,
+				EB836F371DD05CC200F3F78D /* NotificationViewController */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +235,14 @@
 				EB3961E91D9CAAE7005A4693 /* LaunchScreen.storyboard in Resources */,
 				EB3961E61D9CAAE7005A4693 /* Assets.xcassets in Resources */,
 				EB3961E41D9CAAE7005A4693 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB836F361DD05CC200F3F78D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB836F421DD05CC200F3F78D /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +259,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB836F341DD05CC200F3F78D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB836F3F1DD05CC200F3F78D /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB836F451DD05CC200F3F78D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB836F371DD05CC200F3F78D /* NotificationViewController */;
+			targetProxy = EB836F441DD05CC200F3F78D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EB3961E21D9CAAE7005A4693 /* Main.storyboard */ = {
@@ -185,6 +292,14 @@
 				EB3961E81D9CAAE7005A4693 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EB836F401DD05CC200F3F78D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB836F411DD05CC200F3F78D /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -284,6 +399,7 @@
 		EB3961EE1D9CAAE7005A4693 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bluetooth/Bluetooth.entitlements;
 				DEVELOPMENT_TEAM = 5JTUB897PB;
@@ -298,6 +414,7 @@
 		EB3961EF1D9CAAE7005A4693 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bluetooth/Bluetooth.entitlements;
 				DEVELOPMENT_TEAM = 5JTUB897PB;
@@ -305,6 +422,32 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iOS-swift.20160422.learn.Bluetoot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EB836F471DD05CC200F3F78D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 5JTUB897PB;
+				INFOPLIST_FILE = NotificationViewController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iOS-swift.20160422.learn.Bluetoot.NotificationViewController";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EB836F481DD05CC200F3F78D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 5JTUB897PB;
+				INFOPLIST_FILE = NotificationViewController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iOS-swift.20160422.learn.Bluetoot.NotificationViewController";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -329,6 +472,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EB836F491DD05CC200F3F78D /* Build configuration list for PBXNativeTarget "NotificationViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB836F471DD05CC200F3F78D /* Debug */,
+				EB836F481DD05CC200F3F78D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wMl-mO-Pq6">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="u0A-Fi-ZnJ">
+            <objects>
+                <viewController id="wMl-mO-Pq6" customClass="NotificationViewController" customModule="NotificationViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ayi-XM-3Bg"/>
+                        <viewControllerLayoutGuide type="bottom" id="tHa-PG-HZd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oaF-9n-ieP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lt1-uN-Mfl">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ndP-av-ksL">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="BY5-mt-egl"/>
+                                    <constraint firstAttribute="height" constant="60" id="irT-ur-0Z6"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.46666666870000001" green="0.76470589639999997" blue="0.26666668059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="lt1-uN-Mfl" secondAttribute="trailing" id="2hJ-WC-3zJ"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="oaF-9n-ieP" secondAttribute="leading" constant="20" symbolic="YES" id="DRq-vX-j02"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ayi-XM-3Bg" secondAttribute="bottom" id="Pvw-SM-5Vs"/>
+                            <constraint firstItem="ndP-av-ksL" firstAttribute="leading" secondItem="oaF-9n-ieP" secondAttribute="leadingMargin" id="Qsy-Mq-GKd"/>
+                            <constraint firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" id="YeR-p2-PCn"/>
+                            <constraint firstItem="tHa-PG-HZd" firstAttribute="top" secondItem="lt1-uN-Mfl" secondAttribute="bottom" id="f5p-7v-lMB"/>
+                            <constraint firstItem="lt1-uN-Mfl" firstAttribute="leading" secondItem="ndP-av-ksL" secondAttribute="trailing" id="mBj-Jw-YvZ"/>
+                            <constraint firstItem="ndP-av-ksL" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" id="tKD-40-Rmv"/>
+                            <constraint firstItem="lt1-uN-Mfl" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" id="ui8-xS-66I"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="ndP-av-ksL" id="uRQ-aa-qud"/>
+                        <outlet property="label" destination="GcN-lo-r42" id="9EM-Cc-ojn"/>
+                        <outlet property="textView" destination="lt1-uN-Mfl" id="R3K-ET-1Kq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MgB-dm-5oA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-510" y="-91"/>
+        </scene>
+    </scenes>
+</document>

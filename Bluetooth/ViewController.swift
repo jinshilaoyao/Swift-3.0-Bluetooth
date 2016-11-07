@@ -37,6 +37,11 @@ class ViewController: UIViewController {
             self.updateDistanceLabel(distance: distance)
         }
         
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        createReminderNotification(for: "本地测试")
     }
 
     private func updateDistanceLabel(distance: Double) {
@@ -56,19 +61,21 @@ class ViewController: UIViewController {
     func createReminderNotification(for task: String) {
         // Configure our notification's content
         let content = UNMutableNotificationContent()
-        content.title = "Task Reminder"
+        content.title = "通知样式扩展演示"
         content.body = "\(task)!!" // Important to include this, otherwise notification won't display
         content.sound = UNNotificationSound.default()
         content.categoryIdentifier = Identifiers.reminderCategory
+        content.userInfo = ["imageURL":"http://www.baidu.com","content":"回家吃饭"]
         
         // We want the notification to nag us every 60 seconds (the minimum time-interval Apple allows us to repeat at)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        
         
         // Simply use the task name as our identifier. This means we have a single notification per task... any other notifications created with same identifier will overwrite the existing notification.
         let identifier = "\(task)"
         
         // Construct the request with the above components
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: nil)
         
         UNUserNotificationCenter.current().add(request) {
             error in
