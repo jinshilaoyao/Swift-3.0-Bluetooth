@@ -14,6 +14,7 @@ import UserNotifications
 protocol BluetoothDelegate: NSObjectProtocol {
     func blueToothDidDiscoverPeripheral()
     func blueToothClear()
+    func blueToothDevicIsLeave()
 }
 
 class Bluetooth: NSObject {
@@ -106,6 +107,7 @@ extension Bluetooth: CBPeripheralDelegate {
             let temp = pow(10.0, power)
             if temp >= 80 {
                 createReminderNotification(for: "设备正在远离！！")
+                delegate?.blueToothDevicIsLeave()
             }
             getdistance?(Double(rssi))
         }
@@ -195,7 +197,7 @@ extension Bluetooth: CBCentralManagerDelegate {
         content.body = "\(task)!!" // Important to include this, otherwise notification won't display
         content.sound = UNNotificationSound.default()
         content.categoryIdentifier = Identifiers.reminderCategory
-        
+        content.categoryIdentifier = "Notification"
         // We want the notification to nag us every 60 seconds (the minimum time-interval Apple allows us to repeat at)
 //        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
         

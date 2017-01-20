@@ -32,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             })
             
+            
+            
             center.getNotificationSettings(completionHandler: { (settings) in
                 
                 switch settings.authorizationStatus {

@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Bluetoothwatch (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Bluetoothwatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>NotificationViewController.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>EB836F371DD05CC200F3F78D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EBCA3E711E30C3C800B21B03</key>
 		<dict>
 			<key>primary</key>
 			<true/>

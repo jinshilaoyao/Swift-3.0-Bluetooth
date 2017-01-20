@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import WatchConnectivity
 
 struct Identifiers {
     static let reminderCategory = "reminder"
@@ -21,6 +22,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var tableview: UITableView!
+    
+    
+    fileprivate var session: WCSession?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -37,6 +42,12 @@ class ViewController: UIViewController {
             self.updateDistanceLabel(distance: distance)
         }
         
+        
+        
+        //watch与手机通信
+        session = WCSession.default()
+        session?.delegate = self
+        session?.activate()
         
     }
     
@@ -102,6 +113,9 @@ extension ViewController: BluetoothDelegate {
         tableview.reloadData()
     }
     
+    func blueToothDevicIsLeave() {
+        session?.sendMessage(["text": "Leaving.."], replyHandler: nil, errorHandler: nil)
+    }
 }
 
 extension ViewController: UITableViewDelegate,UITableViewDataSource {
@@ -125,7 +139,21 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
             cell?.accessoryType = .detailButton
         }
     }
+}
+extension ViewController: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
     
+
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
 }
 
 
